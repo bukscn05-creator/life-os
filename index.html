@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" id="meta-theme-color" content="#F5F3EE">
+  <meta name="theme-color" content="#131312" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="LIFE OS - Sistema operativo personal, local y privado">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="LIFE OS">
+  <title>LIFE OS</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.svg">
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-inner">
+        <div class="sidebar-top">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">LO</span>
+            <span class="brand-name">LIFE OS</span>
+          </div>
+          <button class="sidebar-collapse" id="sidebar-collapse" type="button" aria-label="Colapsar barra lateral" aria-expanded="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+        </div>
+        <nav class="nav" id="desktop-nav">
+          <div class="nav-group">
+            <p class="nav-group-label">Centro</p>
+            <ul class="nav-list">
+              <li><a href="#hoy" data-route="hoy"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Hoy</span></a></li>
+              <li><a href="#calendario" data-route="calendario"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Agenda</span></a></li>
+              <li><a href="#vence" data-route="vence"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Lo que vence</span><span class="nav-badge" id="badge-vence" hidden></span></a></li>
+            </ul>
+          </div>
+          <div class="nav-group">
+            <p class="nav-group-label">Finanzas</p>
+            <ul class="nav-list">
+              <li><a href="#dinero" data-route="dinero"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Dinero</span></a></li>
+              <li><a href="#suscripciones" data-route="suscripciones"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Suscripciones</span></a></li>
+              <li><a href="#huchas" data-route="huchas"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Huchas</span></a></li>
+            </ul>
+          </div>
+          <div class="nav-group">
+            <p class="nav-group-label">Vida</p>
+            <ul class="nav-list">
+              <li><a href="#habitos" data-route="habitos"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Hábitos</span></a></li>
+              <li><a href="#salud" data-route="salud"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Salud</span></a></li>
+              <li><a href="#objetivos" data-route="objetivos"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Objetivos</span></a></li>
+              <li><a href="#gente" data-route="gente"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Gente</span></a></li>
+            </ul>
+          </div>
+          <div class="nav-group">
+            <p class="nav-group-label">Sistema</p>
+            <ul class="nav-list">
+              <li><a href="#notas" data-route="notas"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Notas</span></a></li>
+              <li><a href="#insights" data-route="insights"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Insights</span></a></li>
+              <li><a href="#ajustes" data-route="ajustes"><span class="nav-icon" aria-hidden="true"></span><span class="nav-label">Ajustes</span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <main id="main" class="main" tabindex="-1">
+        <div id="module-root" class="module-root"></div>
+      </main>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Navegación rápida">
+    <a href="#hoy" data-route="hoy" class="mobile-nav-item"><span class="mn-icon" aria-hidden="true"></span><span class="mn-label">Hoy</span></a>
+    <a href="#calendario" data-route="calendario" class="mobile-nav-item"><span class="mn-icon" aria-hidden="true"></span><span class="mn-label">Agenda</span></a>
+    <a href="#dinero" data-route="dinero" class="mobile-nav-item"><span class="mn-icon" aria-hidden="true"></span><span class="mn-label">Dinero</span></a>
+    <a href="#habitos" data-route="habitos" class="mobile-nav-item"><span class="mn-icon" aria-hidden="true"></span><span class="mn-label">Hábitos</span></a>
+    <button type="button" class="mobile-nav-item" id="mobile-more-btn" aria-haspopup="dialog"><span class="mn-icon" aria-hidden="true"></span><span class="mn-label">Más</span></button>
+  </nav>
+
+  <button type="button" class="fab" id="fab-add" aria-label="Captura rápida">+</button>
+
+  <div id="sheet-backdrop" class="sheet-backdrop" hidden></div>
+  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-hidden="true" hidden></div>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Env/secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Temp
+/tmp/
+*.tmp
+.aider*
+.vercel
+.env*

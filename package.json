@@ -1,0 +1,14 @@
+{
+  "name": "life-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LIFE OS - PWA personal local-first (es-ES)",
+  "type": "module",
+  "scripts": {
+    "lint": "node scripts/lint-basic.mjs",
+    "test:unit": "node --test tests/unit/*.mjs",
+    "contrast": "node scripts/contrast.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
